@@ -134,6 +134,7 @@ const data = {
   // Dodaj więcej działów i słówek tutaj...
 };
 
+// Funkcja ładowania sekcji
 function loadSection(section) {
   const sectionData = data[section];
   if (!sectionData) return;
@@ -157,7 +158,7 @@ function loadSection(section) {
         <h3>${quizItem.question}</h3>
         <div class="quiz-options">
           ${quizItem.options.map((option, i) => `
-            <button onclick="checkAnswer(${index}, ${i})">${option}</button>
+            <button onclick="checkAnswer('${section}', ${index}, ${i})">${option}</button>
           `).join('')}
         </div>
       </div>
@@ -167,14 +168,14 @@ function loadSection(section) {
 }
 
 // Funkcja do sprawdzania odpowiedzi
-function checkAnswer(quizIndex, optionIndex) {
-  const correctAnswer = data[Object.keys(data)[quizIndex]].quiz[quizIndex].answer;
-  const options = document.querySelectorAll(`.quiz-question:nth-child(${quizIndex + 1}) .quiz-options button`);
+function checkAnswer(section, quizIndex, optionIndex) {
+  const correctAnswer = data[section].quiz[quizIndex].answer;
+  const options = document.querySelectorAll(`#quiz .quiz-question:nth-child(${quizIndex + 1}) .quiz-options button`);
 
+  // Sprawdzanie odpowiedzi
   if (optionIndex === correctAnswer) {
     options[optionIndex].classList.add("correct");
   } else {
     options[optionIndex].classList.add("incorrect");
   }
 }
-
