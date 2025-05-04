@@ -43,7 +43,7 @@ const data = {
       }
     ]
   },
-  // Inne działy...
+  // Pozostałe działy...
 };
 
 function loadSection(section) {
@@ -69,20 +69,30 @@ function loadSection(section) {
         <h3>${quizItem.question}</h3>
         <div class="quiz-options">
           ${quizItem.options.map((option, i) => `
-            <button onclick="checkAnswer('${section}', ${index}, ${i})">${option}</button>
+            <button class="quiz-btn" data-section="${section}" data-question="${index}" data-option="${i}">${option}</button>
           `).join('')}
         </div>
       </div>
     `;
   });
   document.getElementById("quiz").innerHTML = quizHTML;
+
+  // Dodanie event listenera dla przycisków
+  document.querySelectorAll('.quiz-btn').forEach(button => {
+    button.addEventListener('click', (event) => {
+      const section = event.target.getAttribute('data-section');
+      const quizIndex = event.target.getAttribute('data-question');
+      const optionIndex = event.target.getAttribute('data-option');
+      checkAnswer(section, quizIndex, optionIndex);
+    });
+  });
 }
 
 function checkAnswer(section, quizIndex, optionIndex) {
   const correctAnswer = data[section].quiz[quizIndex].answer;
-  const options = document.querySelectorAll(`#quiz .quiz-question:nth-child(${quizIndex + 1}) .quiz-options button`);
+  const options = document.querySelectorAll(`.quiz-question:nth-child(${parseInt(quizIndex) + 1}) .quiz-options button`);
 
-  if (optionIndex === correctAnswer) {
+  if (optionIndex == correctAnswer) {
     options[optionIndex].classList.add("correct");
   } else {
     options[optionIndex].classList.add("incorrect");
