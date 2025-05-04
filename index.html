@@ -1,51 +1,40 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repetytorium ósmoklasisty</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Repetytorium Ósmoklasisty</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Repetytorium ósmoklasisty – Słówka i Test</h1>
-    <nav>
-        <button onclick="showSection('dzial1')">Dział 1: Człowiek</button>
-        <button onclick="showSection('dzial2')">Dział 2: Dom</button>
-        <button onclick="showSection('test')">Test sprawdzający</button>
-    </nav>
+  <header>
+    <h1>Repetytorium Ósmoklasisty – Macmillan Education</h1>
+    <p>Wybierz dział, aby rozpocząć naukę lub quiz.</p>
+  </header>
 
-    <section id="dzial1" class="section">
-        <h2>Dział 1: Człowiek</h2>
-        <ul>
-            <li>name – imię</li>
-            <li>surname – nazwisko</li>
-            <li>age – wiek</li>
-            <li>friendly – przyjazny</li>
-        </ul>
+  <main>
+    <section id="menu">
+      <button onclick="loadSection('czlowiek')">Człowiek</button>
+      <button onclick="loadSection('dom')">Dom</button>
+      <button onclick="loadSection('szkola')">Szkoła</button>
+      <button onclick="loadSection('praca')">Praca</button>
+      <button onclick="loadSection('zycie')">Życie rodzinne i towarzyskie</button>
+      <button onclick="loadSection('zywienie')">Żywienie</button>
+      <button onclick="loadSection('zakupy')">Zakupy i usługi</button>
+      <!-- Dodaj kolejne działy -->
     </section>
 
-    <section id="dzial2" class="section" style="display:none;">
-        <h2>Dział 2: Dom</h2>
-        <ul>
-            <li>kitchen – kuchnia</li>
-            <li>living room – salon</li>
-            <li>bedroom – sypialnia</li>
-            <li>flat – mieszkanie</li>
-        </ul>
+    <section id="content">
+      <h2 id="section-title">Wybierz dział</h2>
+      <div id="vocabulary"></div>
+      <div id="quiz"></div>
     </section>
+  </main>
 
-    <section id="test" class="section" style="display:none;">
-        <h2>Test sprawdzający</h2>
-        <p>1. Jak jest „kuchnia” po angielsku?</p>
-        <ul>
-            <li><input type="radio" name="q1" /> bedroom</li>
-            <li><input type="radio" name="q1" /> kitchen ✅</li>
-            <li><input type="radio" name="q1" /> flat</li>
-            <li><input type="radio" name="q1" /> garage</li>
-        </ul>
-        <button onclick="alert('To tylko przykładowy test – odpowiedzi nie są jeszcze oceniane.')">Sprawdź</button>
-    </section>
+  <footer>
+    <p>Strona edukacyjna do nauki angielskiego – egzamin ósmoklasisty</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
