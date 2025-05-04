@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Repetytorium ósmoklasisty</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Repetytorium ósmoklasisty – Słówka i Test</h1>
+    <nav>
+        <button onclick="showSection('dzial1')">Dział 1: Człowiek</button>
+        <button onclick="showSection('dzial2')">Dział 2: Dom</button>
+        <button onclick="showSection('test')">Test sprawdzający</button>
+    </nav>
+
+    <section id="dzial1" class="section">
+        <h2>Dział 1: Człowiek</h2>
+        <ul>
+            <li>name – imię</li>
+            <li>surname – nazwisko</li>
+            <li>age – wiek</li>
+            <li>friendly – przyjazny</li>
+        </ul>
+    </section>
+
+    <section id="dzial2" class="section" style="display:none;">
+        <h2>Dział 2: Dom</h2>
+        <ul>
+            <li>kitchen – kuchnia</li>
+            <li>living room – salon</li>
+            <li>bedroom – sypialnia</li>
+            <li>flat – mieszkanie</li>
+        </ul>
+    </section>
+
+    <section id="test" class="section" style="display:none;">
+        <h2>Test sprawdzający</h2>
+        <p>1. Jak jest „kuchnia” po angielsku?</p>
+        <ul>
+            <li><input type="radio" name="q1" /> bedroom</li>
+            <li><input type="radio" name="q1" /> kitchen ✅</li>
+            <li><input type="radio" name="q1" /> flat</li>
+            <li><input type="radio" name="q1" /> garage</li>
+        </ul>
+        <button onclick="alert('To tylko przykładowy test – odpowiedzi nie są jeszcze oceniane.')">Sprawdź</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
