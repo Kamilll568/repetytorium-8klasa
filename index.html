@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Repetytorium Ósmoklasisty</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Repetytorium Ósmoklasisty – Macmillan Education</h1>
-    <p>Wybierz dział, aby rozpocząć naukę lub quiz.</p>
-  </header>
+  <div id="menu">
+    <button onclick="loadSection('czlowiek')">Człowiek</button>
+    <button onclick="loadSection('dom')">Dom</button>
+    <button onclick="loadSection('szkola')">Szkoła</button>
+    <button onclick="loadSection('praca')">Praca</button>
+    <button onclick="loadSection('zycie')">Życie rodzinne i towarzyskie</button>
+    <button onclick="loadSection('zywienie')">Żywienie</button>
+  </div>
 
-  <main>
-    <section id="menu">
-      <button onclick="loadSection('czlowiek')">Człowiek</button>
-      <button onclick="loadSection('dom')">Dom</button>
-      <button onclick="loadSection('szkola')">Szkoła</button>
-      <button onclick="loadSection('praca')">Praca</button>
-      <button onclick="loadSection('zycie')">Życie rodzinne i towarzyskie</button>
-      <button onclick="loadSection('zywienie')">Żywienie</button>
-      <button onclick="loadSection('zakupy')">Zakupy i usługi</button>
-      <!-- Dodaj kolejne działy -->
-    </section>
-
-    <section id="content">
-      <h2 id="section-title">Wybierz dział</h2>
-      <div id="vocabulary"></div>
-      <div id="quiz"></div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Strona edukacyjna do nauki angielskiego – egzamin ósmoklasisty</p>
-  </footer>
+  <div id="content">
+    <h1 id="section-title">Wybierz dział</h1>
+    <div id="vocabulary"></div>
+    <div id="quiz"></div>
+  </div>
 
   <script src="script.js"></script>
 </body>
