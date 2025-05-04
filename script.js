@@ -43,98 +43,9 @@ const data = {
       }
     ]
   },
-  szkola: {
-    title: "Szkoła",
-    vocabulary: [
-      { pl: "nauczyciel", en: "teacher" },
-      { pl: "uczeń", en: "student" },
-      { pl: "klasa", en: "class" },
-      { pl: "lekcja", en: "lesson" },
-      { pl: "egzamin", en: "exam" }
-    ],
-    quiz: [
-      {
-        question: "Jak jest 'nauczyciel' po angielsku?",
-        options: ["student", "teacher", "class", "lesson"],
-        answer: 1
-      },
-      {
-        question: "Jak jest 'egzamin' po angielsku?",
-        options: ["test", "exam", "quiz", "homework"],
-        answer: 1
-      }
-    ]
-  },
-  praca: {
-    title: "Praca",
-    vocabulary: [
-      { pl: "praca", en: "job" },
-      { pl: "zawód", en: "profession" },
-      { pl: "pracownik", en: "employee" },
-      { pl: "szef", en: "boss" },
-      { pl: "biuro", en: "office" }
-    ],
-    quiz: [
-      {
-        question: "Jak jest 'praca' po angielsku?",
-        options: ["work", "job", "profession", "office"],
-        answer: 1
-      },
-      {
-        question: "Jak jest 'szef' po angielsku?",
-        options: ["boss", "employee", "manager", "director"],
-        answer: 0
-      }
-    ]
-  },
-  zycie: {
-    title: "Życie rodzinne i towarzyskie",
-    vocabulary: [
-      { pl: "rodzina", en: "family" },
-      { pl: "przyjaciel", en: "friend" },
-      { pl: "urodziny", en: "birthday" },
-      { pl: "ślub", en: "wedding" },
-      { pl: "wakacje", en: "holiday" }
-    ],
-    quiz: [
-      {
-        question: "Jak jest 'rodzina' po angielsku?",
-        options: ["family", "relatives", "parents", "siblings"],
-        answer: 0
-      },
-      {
-        question: "Jak jest 'ślub' po angielsku?",
-        options: ["marriage", "wedding", "engagement", "anniversary"],
-        answer: 1
-      }
-    ]
-  },
-  zywienie: {
-    title: "Żywienie",
-    vocabulary: [
-      { pl: "jedzenie", en: "food" },
-      { pl: "napój", en: "drink" },
-      { pl: "śniadanie", en: "breakfast" },
-      { pl: "obiad", en: "lunch" },
-      { pl: "kolacja", en: "dinner" }
-    ],
-    quiz: [
-      {
-        question: "Jak jest 'śniadanie' po angielsku?",
-        options: ["breakfast", "lunch", "dinner", "supper"],
-        answer: 0
-      },
-      {
-        question: "Jak jest 'napój' po angielsku?",
-        options: ["drink", "beverage", "juice", "water"],
-        answer: 0
-      }
-    ]
-  },
-  // Dodaj więcej działów i słówek tutaj...
+  // Inne działy...
 };
 
-// Funkcja ładowania sekcji
 function loadSection(section) {
   const sectionData = data[section];
   if (!sectionData) return;
@@ -167,12 +78,10 @@ function loadSection(section) {
   document.getElementById("quiz").innerHTML = quizHTML;
 }
 
-// Funkcja do sprawdzania odpowiedzi
 function checkAnswer(section, quizIndex, optionIndex) {
   const correctAnswer = data[section].quiz[quizIndex].answer;
   const options = document.querySelectorAll(`#quiz .quiz-question:nth-child(${quizIndex + 1}) .quiz-options button`);
 
-  // Sprawdzanie odpowiedzi
   if (optionIndex === correctAnswer) {
     options[optionIndex].classList.add("correct");
   } else {
